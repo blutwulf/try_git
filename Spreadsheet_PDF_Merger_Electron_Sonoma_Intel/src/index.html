@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spreadsheet PDF Merger</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <div class="app-icon">PDF</div>
+    <div><h1>Spreadsheet PDF Merger</h1><p>Merge each spreadsheet row into a renamed, verified two-page PDF.</p></div>
+  </header>
+  <section class="panel">
+    <h2>1. Select files and folders</h2>
+    <div class="file-row"><div><strong>Spreadsheet</strong><span id="sheetPath">Not selected</span></div><button id="chooseSheet">Choose spreadsheet…</button></div>
+    <div class="file-row"><div><strong>Source PDF folder</strong><span id="inputPath">Not selected</span></div><button id="chooseInput">Choose folder…</button></div>
+    <div class="file-row"><div><strong>Output folder</strong><span id="outputPath">Not selected</span></div><button id="chooseOutput">Choose folder…</button></div>
+  </section>
+  <section class="panel">
+    <h2>2. Map spreadsheet columns</h2>
+    <div class="field"><label for="firstColumn">First PDF filename column</label><select id="firstColumn" disabled></select></div>
+    <div class="field"><label for="secondColumn">Second PDF filename column</label><select id="secondColumn" disabled></select></div>
+    <div class="field"><label for="nameColumns">Output name column(s)</label><input id="nameColumns" type="text" placeholder="Job ID, SKU" disabled></div>
+    <p class="hint">Enter exact column headers separated by commas. Values are joined with underscores.</p>
+  </section>
+  <section class="panel">
+    <h2>3. Options</h2>
+    <label class="check"><input type="checkbox" id="recursive"> Search source folder and subfolders</label>
+    <label class="check"><input type="checkbox" id="overwrite"> Overwrite existing output PDFs</label>
+    <p class="hint">Each source PDF must contain exactly one page. The first PDF becomes page 1; the second becomes page 2.</p>
+  </section>
+  <section class="panel">
+    <div class="action-row"><h2>4. Process files</h2><button class="primary" id="run" disabled>Merge PDFs</button></div>
+    <div id="status" role="status">Choose a spreadsheet to begin.</div>
+    <pre id="log" aria-live="polite"></pre>
+  </section>
+  <footer>Runs locally on your Mac. Original PDFs are not modified.</footer>
+</main>
+<script src="renderer.js"></script>
+</body>
+</html>

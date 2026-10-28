@@ -1,0 +1,39 @@
+{
+  "name": "spreadsheet-pdf-merger",
+  "version": "1.0.0",
+  "description": "Spreadsheet-driven two-page PDF merger for macOS",
+  "main": "src/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist:mac:intel": "electron-builder --mac dir --x64",
+    "pack:mac:intel": "electron-builder --mac zip --x64"
+  },
+  "dependencies": {
+    "pdf-lib": "1.17.1",
+    "xlsx": "0.18.5"
+  },
+  "devDependencies": {
+    "electron": "35.7.5",
+    "electron-builder": "26.0.12"
+  },
+  "build": {
+    "appId": "com.local.spreadsheetpdfmerger",
+    "productName": "Spreadsheet PDF Merger",
+    "mac": {
+      "target": [
+        "dir"
+      ],
+      "category": "public.app-category.productivity",
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
+    },
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json",
+      "node_modules/**/*"
+    ]
+  }
+}

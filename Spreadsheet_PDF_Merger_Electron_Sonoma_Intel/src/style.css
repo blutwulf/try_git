@@ -1,0 +1,29 @@
+* { box-sizing: border-box; }
+:root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; }
+body { margin: 0; background: Canvas; color: CanvasText; }
+main { max-width: 920px; margin: 0 auto; padding: 26px; }
+header { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+.app-icon { width: 58px; height: 58px; border-radius: 14px; display: grid; place-items: center; font-weight: 800; color: white; background: #b83a35; letter-spacing: -1px; }
+h1 { margin: 0 0 5px; font-size: 25px; }
+h2 { font-size: 16px; margin: 0 0 15px; }
+p { margin: 0; color: color-mix(in srgb, CanvasText 68%, transparent); }
+.panel { border: 1px solid color-mix(in srgb, CanvasText 18%, transparent); border-radius: 14px; padding: 18px; margin: 14px 0; background: color-mix(in srgb, Canvas 96%, CanvasText 4%); }
+.file-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid color-mix(in srgb, CanvasText 10%, transparent); }
+.file-row:first-of-type { border-top: 0; }
+.file-row div { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.file-row span { font-size: 12px; opacity: .72; overflow-wrap: anywhere; }
+button, select, input[type=text] { font: inherit; border: 1px solid color-mix(in srgb, CanvasText 20%, transparent); border-radius: 8px; padding: 9px 12px; background: ButtonFace; color: ButtonText; }
+button { cursor: pointer; white-space: nowrap; }
+button:disabled { opacity: .45; cursor: default; }
+.primary { background: #0a78d1; border-color: #0a78d1; color: white; font-weight: 650; }
+.field { display: grid; grid-template-columns: 230px 1fr; align-items: center; gap: 14px; margin: 12px 0; }
+select, input[type=text] { width: 100%; min-width: 0; }
+.hint { font-size: 12px; margin-top: 10px; line-height: 1.5; }
+.check { display: block; margin: 10px 0; }
+.check input { margin-right: 8px; }
+.action-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.action-row h2 { margin: 0; }
+#status { margin-top: 14px; font-size: 13px; }
+#log { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 220px; overflow: auto; font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; }
+footer { text-align: center; font-size: 12px; opacity: .65; padding: 10px; }
+@media (max-width: 650px) { main { padding: 14px; } .file-row { align-items: flex-start; flex-direction: column; } .field { grid-template-columns: 1fr; gap: 5px; } }
